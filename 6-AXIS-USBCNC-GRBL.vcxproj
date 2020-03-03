@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{1C49AC33-21E0-493F-BA53-1487D41FC13F}</ProjectGuid>
+    <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
+    <BSP_VERSION>2020.01</BSP_VERSION>
+    <InPlaceBSPSubdir />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <AdditionalIncludeDirectories>Libraries/CMSIS/Include;inc;Libraries/CMSIS/Device/ST/STM32F10x/Include;Libraries/STM32F10x_StdPeriph_Driver/inc;stm_usb_fs_lib/inc;usb;util;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;STM32F10X_MD;STM32F103C8;STM32F103C8T6;USE_STDPERIPH_DRIVER;USEUSB;_GRBL_;__ASSEMBLY__;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript>stm32_flash.ld</LinkerScript>
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\misc.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_crc.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c" />
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c" />
+    <ClCompile Include="src\coolant_control.c" />
+    <ClCompile Include="src\eeprom.c" />
+    <ClCompile Include="src\gcode.c" />
+    <ClCompile Include="src\jog.c" />
+    <ClCompile Include="src\limits.c" />
+    <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\motion_control.c" />
+    <ClCompile Include="src\nuts_bolts.c" />
+    <ClCompile Include="src\planner.c" />
+    <ClCompile Include="src\print.c" />
+    <ClCompile Include="src\probe.c" />
+    <ClCompile Include="src\protocol.c" />
+    <ClCompile Include="src\report.c" />
+    <ClCompile Include="src\serial.c" />
+    <ClCompile Include="src\settings.c" />
+    <ClCompile Include="src\spindle_control.c" />
+    <ClCompile Include="src\startup_stm32f10x_md.s" />
+    <ClCompile Include="src\stepper.c" />
+    <ClCompile Include="src\system.c" />
+    <ClCompile Include="src\system_stm32f10x.c" />
+    <ClCompile Include="stm_usb_fs_lib\src\usb_core.c" />
+    <ClCompile Include="stm_usb_fs_lib\src\usb_init.c" />
+    <ClCompile Include="stm_usb_fs_lib\src\usb_int.c" />
+    <ClCompile Include="stm_usb_fs_lib\src\usb_mem.c" />
+    <ClCompile Include="stm_usb_fs_lib\src\usb_regs.c" />
+    <ClCompile Include="stm_usb_fs_lib\src\usb_sil.c" />
+    <ClCompile Include="usb\hw_config.c" />
+    <ClCompile Include="usb\usb_desc.c" />
+    <ClCompile Include="usb\usb_endp.c" />
+    <ClCompile Include="usb\usb_istr.c" />
+    <ClCompile Include="usb\usb_prop.c" />
+    <ClCompile Include="usb\usb_pwr.c" />
+    <ClCompile Include="util\stm32f10x_it.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <None Include="stm32.props" />
+    <ClInclude Include="stm32f1xx_hal_conf.h" />
+    <None Include="6-AXIS-USBCNC-GRBL-Debug.vgdbsettings" />
+    <None Include="6-AXIS-USBCNC-GRBL-Release.vgdbsettings" />
+    <None Include="stm32.xml" />
+  </ItemGroup>
+</Project>

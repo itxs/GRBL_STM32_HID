@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{20b74b13-aef2-4b53-8517-bca37ff3baf9}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{0bf6ae39-2600-4f17-94d8-ec98fb9f9036}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{60d46235-5fa5-445f-a167-629305663520}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source files\Device-specific files">
+      <UniqueIdentifier>{98bc9e30-34e8-414c-9f33-7b4ad1d88117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files">
+      <UniqueIdentifier>{43e8474e-6a82-463f-9002-7f60eb53a2f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{1d95e925-b95b-4f4a-960a-565237734fb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\grbl">
+      <UniqueIdentifier>{559f2dd0-efaa-489a-87c0-72674aee0f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\StdPeriph">
+      <UniqueIdentifier>{b379f011-cdac-4194-bd4c-0398e9f26922}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\usb_fs_lib">
+      <UniqueIdentifier>{c8b749dc-c5d5-4174-b2e5-bb669e11f642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\usb">
+      <UniqueIdentifier>{c4265e93-023a-4e27-8cba-50ed60c67915}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="stm32.props">
+      <Filter>Source files\Device-specific files</Filter>
+    </None>
+    <ClInclude Include="stm32f1xx_hal_conf.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <None Include="6-AXIS-USBCNC-GRBL-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="6-AXIS-USBCNC-GRBL-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="stm32.xml">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\coolant_control.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\eeprom.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gcode.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\jog.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\limits.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\motion_control.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nuts_bolts.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\planner.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\print.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\probe.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\protocol.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\report.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\serial.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spindle_control.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stepper.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system.c">
+      <Filter>Source files\grbl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\misc.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_cec.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_crc.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dbgmcu.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_i2c.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c">
+      <Filter>Source files\StdPeriph</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_usb_fs_lib\src\usb_core.c">
+      <Filter>Source files\usb_fs_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_usb_fs_lib\src\usb_init.c">
+      <Filter>Source files\usb_fs_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_usb_fs_lib\src\usb_int.c">
+      <Filter>Source files\usb_fs_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_usb_fs_lib\src\usb_mem.c">
+      <Filter>Source files\usb_fs_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_usb_fs_lib\src\usb_regs.c">
+      <Filter>Source files\usb_fs_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_usb_fs_lib\src\usb_sil.c">
+      <Filter>Source files\usb_fs_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="util\stm32f10x_it.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="usb\hw_config.c">
+      <Filter>Source files\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="usb\usb_desc.c">
+      <Filter>Source files\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="usb\usb_endp.c">
+      <Filter>Source files\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="usb\usb_istr.c">
+      <Filter>Source files\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="usb\usb_prop.c">
+      <Filter>Source files\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="usb\usb_pwr.c">
+      <Filter>Source files\usb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\startup_stm32f10x_md.s">
+      <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system_stm32f10x.c">
+      <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -380,7 +380,15 @@ void USART1_IRQHandler (void)
             }
             break; 
           #ifdef DEBUG
+          #ifdef STM32F103C8
+	        __disable_irq();
+	        sys_rt_exec_debug |= EXEC_DEBUG_REPORT;
+	        __enable_irq();
+	        break;
+          #endif
+          #ifdef AVRTARGET
             case CMD_DEBUG_REPORT: {uint8_t sreg = SREG; cli(); bit_true(sys_rt_exec_debug,EXEC_DEBUG_REPORT); SREG = sreg;} break;
+          #endif
           #endif
           case CMD_FEED_OVR_RESET: system_set_exec_motion_override_flag(EXEC_FEED_OVR_RESET); break;
           case CMD_FEED_OVR_COARSE_PLUS: system_set_exec_motion_override_flag(EXEC_FEED_OVR_COARSE_PLUS); break;
