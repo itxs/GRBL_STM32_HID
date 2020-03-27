@@ -84,8 +84,8 @@ uint8_t gc_execute_line(char *line)
   uint8_t ijk_words = 0; // IJK tracking
 
   // Initialize command and value words and parser flags variables.
-  uint16_t command_words = 0; // Tracks G and M command words. Also used for modal group violations.
-  uint16_t value_words = 0; // Tracks value words.
+  uint32_t command_words = 0; // Tracks G and M command words. Also used for modal group violations.
+  uint32_t value_words = 0; // Tracks value words.
   uint8_t gc_parser_flags = GC_PARSER_NONE;
 
   // Determine if the line is a jogging motion or a normal g-code block.
@@ -177,7 +177,7 @@ uint8_t gc_execute_line(char *line)
               if (!((mantissa == 20) || (mantissa == 30) || (mantissa == 40) || (mantissa == 50))) {
                 FAIL(STATUS_GCODE_UNSUPPORTED_COMMAND); // [Unsupported G38.x command]
               }
-              gc_block.modal.motion += (mantissa/10)+100;
+              gc_block.modal.motion += (mantissa / 10) + 100;
               mantissa = 0; // Set to zero to indicate valid non-integer G command.
             }  
             break;
@@ -204,6 +204,12 @@ uint8_t gc_execute_line(char *line)
             word_bit = MODAL_GROUP_G6;
             gc_block.modal.units = 21 - int_value;
             break;
+          case 32: case 33:
+	        word_bit = MODAL_GROUP_G1;
+	        
+	        ///
+#warning "TODO: add code here."
+	        break;
           case 40:
             word_bit = MODAL_GROUP_G7;
             // NOTE: Not required since cutter radius compensation is always disabled. Only here
@@ -234,6 +240,12 @@ uint8_t gc_execute_line(char *line)
             if (mantissa != 0) { FAIL(STATUS_GCODE_UNSUPPORTED_COMMAND); } // [G61.1 not supported]
             // gc_block.modal.control = CONTROL_MODE_EXACT_PATH; // G61
             break;
+          case 76: // G76 P- Z- I- J- R- K- Q- H- E- L- Multipass threading
+	        word_bit = MODAL_GROUP_G0;
+	        
+	        ///
+#warning "TODO: add code here."
+	        break;
           default: FAIL(STATUS_GCODE_UNSUPPORTED_COMMAND); // [Unsupported G command]
         }
         if (mantissa > 0) { FAIL(STATUS_GCODE_COMMAND_VALUE_NOT_INTEGER); } // [Unsupported or invalid Gxx.x command]
@@ -315,7 +327,7 @@ uint8_t gc_execute_line(char *line)
           case 'C': word_bit = WORD_C; gc_block.values.xyz[C_AXIS] = value; axis_words |= (1<<C_AXIS); break;
 		  #endif
 // ---
-          // case 'D': // Not supported
+          case 'D': word_bit = WORD_D; gc_block.values.d = value; break;
           case 'F': word_bit = WORD_F; gc_block.values.f = value; break;
           // case 'H': // Not supported
           case 'I': word_bit = WORD_I; gc_block.values.ijk[X_AXIS] = value; ijk_words |= (1<<X_AXIS); break;
@@ -325,7 +337,7 @@ uint8_t gc_execute_line(char *line)
           case 'N': word_bit = WORD_N; gc_block.values.n = truncf(value); break;
           case 'P': word_bit = WORD_P; gc_block.values.p = value; break;
           // NOTE: For certain commands, P value must be an integer, but none of these commands are supported.
-          // case 'Q': // Not supported
+          case 'Q': word_bit = WORD_Q; gc_block.values.d = value; break;
           case 'R': word_bit = WORD_R; gc_block.values.r = value; break;
           case 'S': word_bit = WORD_S; gc_block.values.s = value; break;
 		  case 'T': word_bit = WORD_T;

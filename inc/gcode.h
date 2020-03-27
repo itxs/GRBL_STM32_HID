@@ -159,6 +159,8 @@
 #ifdef ABC_AXIS
 #define WORD_C  15
 #endif
+#define WORD_D  17
+#define WORD_Q  18
 // ---
 
 // Define g-code parser position updating flags
@@ -213,9 +215,10 @@ typedef struct {
   uint8_t l;       // G10 or canned cycles parameters
   int32_t n;       // Line number
   float p;         // G10 or dwell parameters
-  // float q;      // G82 peck drilling
-  float r;         // Arc radius
-  float s;         // Spindle speed
+  float q;      // G82 peck drilling
+  float r;          // Arc radius
+  float d;            // Arc radius
+  float s;              // Spindle speed
   uint8_t t;       // Tool selection
 // --- YSV 22-06-2018
   //float xyz[3];    // X,Y,Z Translational axes

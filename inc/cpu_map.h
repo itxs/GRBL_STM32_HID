@@ -458,8 +458,8 @@
 #define RCC_STEPPERS_DISABLE_PORT RCC_APB2Periph_GPIOA
 #define STEPPERS_DISABLE_BIT    15
 #define STEPPERS_DISABLE_MASK   (1<<STEPPERS_DISABLE_BIT)
-#define SetStepperDisableBit() GPIO_SetBits(STEPPERS_DISABLE_PORT,STEPPERS_DISABLE_MASK)
-#define ResetStepperDisableBit() GPIO_ResetBits(STEPPERS_DISABLE_PORT,STEPPERS_DISABLE_MASK)
+#define SetStepperDisableBit() GPIO_ResetBits(STEPPERS_DISABLE_PORT,STEPPERS_DISABLE_MASK)
+#define ResetStepperDisableBit() GPIO_SetBits(STEPPERS_DISABLE_PORT,STEPPERS_DISABLE_MASK)
 
 
   // Define homing/hard limit switch input pins and limit interrupt vectors.
